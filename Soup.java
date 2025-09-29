@@ -74,6 +74,8 @@ public class Soup {
 
     //should remove the word "word" from the string letters. If the word is not found in letters then it does nothing.
     public void removeWord(String word){
-        
+        String findWord = word;
+        int startPosition = letters.indexOf(findWord);
+        letters = letters.substring(0,startPosition) + letters.substring(startPosition + findWord.length());
     }
 }
