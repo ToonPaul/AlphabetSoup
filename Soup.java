@@ -52,7 +52,18 @@ public class Soup {
 
     //should remove the first available vowel from letters. If there are no vowels this method has no effect.
     public void removeFirstVowel(){
-        letters = letters.replace("[AEIOUaeiou]", "");
+       //This top string is what checks for each possible type of vowel, either uppercase or lowercase
+        String vowels = "aeiouAEIOU";
+        //Runs through each character in letters to check if it is a vowel or not
+        for(int i = 0; i < letters.length(); i++){
+            //if the current index isn't a vowel nothing happens
+            //if the current index is a vowel, we change the value of the String letters to remove the vowel character, but keep everything else. 
+            if(vowels.indexOf(letters.charAt(i)) != -1){
+                letters = letters.substring(0,i) + letters.substring(i+1);
+                //Afterward it returns the new string with the vowel removed.
+                return;
+            }
+        }
     }
 
     //should remove "num" letters from a random spot in the string letters. You may assume num never exceeds the length of the string.
@@ -66,6 +77,7 @@ public class Soup {
     //should remove the word "word" from the string letters. If the word is not found in letters then it does nothing.
     public void removeWord(String word){
         //String findWord = word;
+        
 
     }
 }
